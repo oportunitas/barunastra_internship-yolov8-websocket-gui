@@ -1,15 +1,15 @@
 ###
-# __webcam_test.py
-#   dummy code | test webcam
-# Oportunitas (Taib Izzat Samawi); @07/Jul/2023
+# ╭╴__webcam_test.py
+# ╰--> dummy code | test webcam
+# ╭╴Oportunitas (Taib Izzat Samawi); 07/Jul/2023
+# ╰-@Barunastra_ITS
 ###
 
-import cv2
-#import openCV 2 python3 library
+import cv2 # import openCV 2 python3 library
 
 capture = cv2.VideoCapture(0)
 capture.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
-#capture webcam footage
+## capture webcam footage
 
 while True:
     print("reading frame")
