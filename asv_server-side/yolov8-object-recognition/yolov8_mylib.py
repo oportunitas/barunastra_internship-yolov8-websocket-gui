@@ -10,19 +10,20 @@ import base64
 from ultralytics import YOLO
 from deepsparse import Pipeline
 
-#define constants and variables BELOW this line#
-CONFIDENCE_TRESHOLD = 0.35
+### define constants and variables BELOW this line#
+my_conf_thres = 0.2
+my_iou_thres = 0.5
 
 yolo_pipeline = Pipeline.create(
     task="yolov8",
     model_path="yolov8-object-recognition/weights/yolov8n-balls.onnx",
     num_cores=4
 )
-#define constants and variables ABOVE this line#
+### define constants and variables ABOVE this line#
 
 def captureYOLOv8Inference(frame):
     start = datetime.datetime.now()
-    inference = yolo_pipeline(images=frame, iou_thres=0.5, conf_thres=0.2)
+    inference = yolo_pipeline(images=frame, iou_thres=my_iou_thres, conf_thres=my_conf_thres)
     for j in range (len(inference.boxes)):
         idx = 0
         for k in range (len(inference.boxes[j])):
