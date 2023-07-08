@@ -22,7 +22,7 @@ yolo_pipeline = Pipeline.create(
 
 def captureYOLOv8Inference(frame):
     start = datetime.datetime.now()
-    inference = yolo_pipeline(images=frame, iou_thres=0.5, conf_thres=0.3)
+    inference = yolo_pipeline(images=frame, iou_thres=0.5, conf_thres=0.2)
     for j in range (len(inference.boxes)):
         idx = 0
         for k in range (len(inference.boxes[j])):
