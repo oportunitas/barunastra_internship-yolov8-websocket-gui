@@ -1,0 +1,6 @@
+names:
+- green_ball
+- red_ball
+nc: 2
+train: danau_8-balls/train/images
+val: danau_8-bals/valid/images
