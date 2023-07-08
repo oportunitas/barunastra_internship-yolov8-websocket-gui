@@ -29,12 +29,12 @@ capture.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc('M', 'J', 'P', 'G'))
 
 async def publishYOLOv8Inference(websocket, path):
     while True:
-        cap_start = datetime.datetime.now()
         start = datetime.datetime.now() # store start datetime
 
-        confirm = await websocket.recv()
+        #confirm = await websocket.recv()
         ## wait for another request
 
+        cap_start = datetime.datetime.now()
         ret, frame = capture.read()
         if not ret:
             break
@@ -67,7 +67,7 @@ async def publishYOLOv8Inference(websocket, path):
         print(f"capture FPS: {1 / cap_total:.2f}")
         print(f"inference FPS: {1 / inf_total:.2f}")
         print(f"buffer FPS: {1 / buf_total:.2f}")
-        print(f"process FPS: {1 / total:.2f}")
+        #print(f"process FPS: {1 / total:.2f}")
 
     ## run continuously (exit with ^C)
 ## asynchronously publish inference data

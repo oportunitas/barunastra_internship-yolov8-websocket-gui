@@ -41,11 +41,11 @@ async def displayYOLOv8Inference():
                     break
                 ## show image
 
-                confirm = await websocket.send("frame request") # tell server to request another frame
+                #confirm = await websocket.send("frame request") # tell server to request another frame
 
                 end = datetime.datetime.now()
                 total = (end - start).total_seconds()
-                print(f"FPS: {1 / total:.2f}", end="\r")
+                #print(f"FPS: {1 / total:.2f}", end="\r")
 
             ## run continuously (exit with ^C)
         ## __using specified address
