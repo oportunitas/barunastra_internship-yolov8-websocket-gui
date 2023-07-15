@@ -18,7 +18,7 @@ my_iou_thres = 0.6
 
 yolo_pipeline = Pipeline.create(
     task="yolov8",
-    model_path="yolov8-object-recognition/weights/yolov8n-balls.onnx",
+    model_path="yolov8-object-recognition/weights/yolov8n-coco.onnx",
     num_cores=4
 )
 ### define constants and variables ABOVE this line#
@@ -129,16 +129,16 @@ def captureYOLOv8Inference(frame):
         class_name = "none"
         ## set default values
 
-        if (class_id == 1):
-            class_name = "red_ball"
-            COLOR = (0, 0, 255)
-        elif (class_id == 0):
-            COLOR = (0, 255, 0)
-            class_name = "green_ball"
+        #if (class_id == 1):
+        #    class_name = "red_ball"
+        #    COLOR = (0, 0, 255)
+        #elif (class_id == 0):
+        #    COLOR = (0, 255, 0)
+        #    class_name = "green_ball"
         ## assign box color
 
         cv2.rectangle(frame, (xmin, ymin) , (xmax, ymax), COLOR, 1)
-        cv2.putText(frame, class_name, (xmin-10,ymin-10), 
+        cv2.putText(frame, idToName(class_id), (xmin-10,ymin-10), 
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, COLOR, 1)
         ## draw box and name on the image given
     ## iterate over every bounding box detected, stored at inference.boxes[0] for deepsparse
