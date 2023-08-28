@@ -5,6 +5,8 @@
 # ╰-@Barunastra_ITS
 ###
 
+print("starting publisher.py")
+
 import cv2
 import base64
 import asyncio
@@ -14,7 +16,9 @@ import os
 from websockets.server import serve
 import sys
 sys.path.append('./yolov8-object-recognition')
+print("check")
 from yolov8_mylib import captureYOLOv8Inference
+print("got all dependencies")
 ## import all dependencies
 
 ### define essential constants and variables BELOW this line

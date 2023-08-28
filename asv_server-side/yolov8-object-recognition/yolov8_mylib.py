@@ -5,10 +5,13 @@
 # ╰-@Barunastra_ITS
 ###
 
+print("starting yolov8_mylib.py")
+
 import cv2
 import datetime
 import base64
 from ultralytics import YOLO
+print("check")
 from deepsparse import Pipeline
 ## import all dependencies
 
