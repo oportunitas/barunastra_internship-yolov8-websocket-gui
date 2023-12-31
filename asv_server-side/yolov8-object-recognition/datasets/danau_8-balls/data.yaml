@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 names:
 - green_ball
 - red_ball
 nc: 2
 train: danau_8-balls/train/images
 val: danau_8-bals/valid/images
+=======
+names:
+- green_ball
+- red_ball
+nc: 2
+train: danau_8-balls/train/images
+val: danau_8-bals/valid/images
+>>>>>>> c9556306391b7ee450ce0db69384df37c899f0a7
